@@ -38,4 +38,4 @@ names(df2)[names(df2) == 'V2'] <- 'ActivityName'
 #step 5 From the data set in step 4, creates a second, independent tidy data set with the average of 
 #each variable for each activity and each subject.
 meanData<-aggregate(df2[,4:ncol(df2)],list(df2$subjectID,df2$ActivityID,df2$ActivityName),mean)
-write.table(meanData,row.names = FALSE)
+write.table(meanData,file = '~/cleanData2.txt',row.names = FALSE)
